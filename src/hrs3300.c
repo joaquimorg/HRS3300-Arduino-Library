@@ -109,8 +109,8 @@ uint8_t get_heart_rate()
 {
   int16_t new_raw_data,  als_raw_data;
   hrs3300_results_t alg_results;
-  uint8_t n;
-  hrs3300_bp_results_t  bp_alg_results ;
+  //uint8_t n;
+  //hrs3300_bp_results_t  bp_alg_results ;
   static uint16_t timer_index = 0;
   new_raw_data = Hrs3300_read_hrs();
   als_raw_data = Hrs3300_read_als();
@@ -129,7 +129,7 @@ uint8_t get_heart_rate()
     }
     else
     {
-      bp_alg_results = Hrs3300_alg_get_bp_results();
+      //bp_alg_results = Hrs3300_alg_get_bp_results();
       return alg_results.hr_result;
     }
   }

@@ -11,7 +11,7 @@ void HRS3300_begin(i2c_read_type i2c_read,i2c_write_type i2c_write)
   _i2c_write = i2c_write;
   Hrs3300_chip_init();
   Hrs3300_chip_enable();
-  Hrs3300_set_exinf(0, 0, 0, 0, 0, 0);
+  //Hrs3300_set_exinf(0, 0, 0, 0, 0, 0);
   Hrs3300_alg_open();
 }
 
@@ -37,7 +37,7 @@ void Hrs3300_write_reg(uint8_t addr, uint8_t data)
 
 uint8_t Hrs3300_read_reg(uint8_t addr) 
 {
-   uint8_t reg_temp;
+   uint8_t reg_temp = 0;
    _i2c_read(0x44, addr, &reg_temp, 1);
    return reg_temp;
 }
